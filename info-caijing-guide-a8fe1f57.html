@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩经网 · 信息索引与资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f6f0;
+            color: #2e2e2e;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Serif SC', 'Source Han Serif SC', 'SimSun', serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fcfbf8;
+            border-radius: 28px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 2.2rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.8rem; }
+            .page { padding: 1.8rem 1.2rem; border-radius: 18px; }
+        }
+
+        /* 主视觉 - 极简字标 */
+        .hero {
+            border-bottom: 1px solid #e6dfd3;
+            padding-bottom: 1.8rem;
+            margin-bottom: 2.2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: #3d352a;
+        }
+
+        .hero .sub {
+            margin-top: 0.4rem;
+            font-size: 0.95rem;
+            color: #8c8579;
+            letter-spacing: 0.6px;
+        }
+
+        .hero .sub span {
+            display: inline-block;
+            background: #ede8de;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #5f5546;
+        }
+
+        /* 引用块 / 提示框 */
+        .callout {
+            background: #f0ece3;
+            border-left: 5px solid #b7a68b;
+            padding: 1.2rem 1.6rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.8rem 0;
+            font-size: 0.96rem;
+            color: #3d362c;
+        }
+
+        .callout strong {
+            color: #6b5c48;
+        }
+
+        .callout a {
+            color: #6b5c48;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+
+        .callout a:hover {
+            color: #9a8468;
+        }
+
+        /* section 通用 */
+        section {
+            margin: 2.2rem 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            letter-spacing: 0.02em;
+            color: #3f382d;
+            margin-bottom: 1rem;
+            border-left: 4px solid #c7b8a1;
+            padding-left: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        p a {
+            color: #6b5c48;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+
+        p a:hover {
+            color: #9a8468;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.5rem;
+            margin: 1.6rem 0;
+        }
+
+        .card {
+            background: #f7f4ed;
+            border-radius: 18px;
+            padding: 1.6rem 1.2rem 1.2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-size: 1.12rem;
+            font-weight: 500;
+            color: #473f32;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.3px;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            color: #4f4a40;
+            margin-bottom: 0;
+            line-height: 1.65;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #ddd6c9;
+            color: #3f382d;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.8rem;
+            border-radius: 20px;
+            margin-top: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #e2dbcf;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #3f382d;
+        }
+
+        .faq-a {
+            color: #5a5449;
+            font-size: 0.93rem;
+            margin-top: 0.2rem;
+        }
+
+        .faq-a a {
+            color: #6b5c48;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.4rem;
+            border-top: 1px solid #e6dfd3;
+            font-size: 0.88rem;
+            color: #8c8579;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 主视觉 -->
+    <div class="hero">
+        <h1>彩经网 · 资料索引</h1>
+        <div class="sub"><span>信息整理 · 内容聚合 · 分类导航</span></div>
+    </div>
+
+    <!-- 介绍段落 + 自然链接 -->
+    <p>
+        面对互联网上日益庞杂的资讯，系统性整理与结构化索引成为高效获取信息的前提。<a href="https://info-caijing.com">彩经网</a>
+        即是以“资料整理”为核心定位的信息仓储——将分散于各处的数据、报告、解读与趋势记录按主题归类，降低重复检索成本，为后续分析提供相对干净的素材起点。
+    </p>
+
+    <div class="callout">
+        <strong>▎索引逻辑</strong> — 每个条目均标注来源与时间戳，不预设立场，仅做客观罗列与交叉引证。适合需要回溯原始信息链的研究型读者。
+    </div>
+
+    <!-- 用途卡片 -->
+    <section>
+        <h2>常见用途</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>主题回溯</h3>
+                <p>按事件、年份、关键词归档，便于纵向比较与趋势观察。适合周期性复盘或专题研究。</p>
+                <span class="tag">时序整理</span>
+            </div>
+            <div class="card">
+                <h3>素材备查</h3>
+                <p>截取关键段落、数据表格与原文链接，形成可复用的引用素材库，减少重复搜索。</p>
+                <span class="tag">精简提取</span>
+            </div>
+            <div class="card">
+                <h3>交叉验证</h3>
+                <p>同一议题下汇集多方信源，辅助判断信息一致性及偏差，提升参考可靠性。</p>
+                <span class="tag">多源对照</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 适合人群 -->
+    <section>
+        <h2>适合人群</h2>
+        <p><strong>信息整理者</strong> — 需要系统存档、分类标记与定期更新的内容运营或研究助理。<br>
+        <strong>长线阅读者</strong> — 偏好深度阅读而非碎片推送，希望通过索引自行筛选信息密度较高的内容。<br>
+        <strong>趋势观察者</strong> — 关注领域动态，需要结构化清单以追踪变化节点与关键陈述。</p>
+        <p style="margin-top: 1rem;">以上角色均可在<a href="https://info-caijing.com">彩经网</a>找到对应模块，站点本身不提供即时解读，而是将整理权交给使用者。</p>
+    </section>
+
+    <!-- FAQ 摘要 + 提示框风格 -->
+    <section>
+        <h2>常见问题 · 摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">Q：内容更新频率如何？</div>
+            <div class="faq-a">按主题分批次更新，重要节点或报告发布后 48 小时内入库。不设固定周期，以信息完整度为优先。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：是否可以转载或引用？</div>
+            <div class="faq-a">索引内大部分内容为原文摘要或结构化重述，建议直接溯源至原始出处。引用时请注明来源 <a href="https://info-caijing.com">彩经网</a> 及其对应原文链接。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：是否开放投稿或协作整理？</div>
+            <div class="faq-a">暂不开放直接编辑，若有系统性资料希望入库，可通过站内联系通道提交，经核对后纳入索引。</div>
+        </div>
+        <div class="callout" style="margin-top: 1.2rem;">
+            <strong>提示</strong> — 所有条目均保留原始发布时间与来源标识，使用者应自行判断内容时效与上下文完整性。
+        </div>
+    </section>
+
+    <!-- 自然结尾 -->
+    <div class="footer-note">
+        以整理为方法，以索引为路径 · <a href="https://info-caijing.com">彩经网</a>
+    </div>
+
+</div>
+</body>
+</html>
